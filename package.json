@@ -1,11 +1,14 @@
 {
   "name": "@keqingrong/math",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Utilities for some frequently used calculation",
   "main": "dist/math.cjs.js",
   "module": "dist/math.esm.js",
   "browser": "dist/math.umd.js",
   "types": "dist/math.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "prepack": "yarn build",
