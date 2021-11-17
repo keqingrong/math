@@ -62,7 +62,7 @@ export const stripTrailingZeros = (value: string) => {
  * getDecimalDigits('1.00'); // 2
  * getDecimalDigits('1.001'); // 3
  */
- export const getDecimalDigits = (value: string | number): number => {
+export const getDecimalDigits = (value: string | number): number => {
   const valueString = typeof value === 'number' ? value.toString(10) : value;
   if (valueString && valueString.includes('.')) {
     return (valueString.split('.')[1] || '').length;

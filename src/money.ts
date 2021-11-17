@@ -7,7 +7,10 @@ import { parseNumber, toFixedAdvanced, stripTrailingZeros } from './utils';
  * cent2yuan(100); // '1'
  * cent2yuan(123); // '1.23'
  */
-export const cent2yuan = (value: string | number, fixedDigits: number = 2): string => {
+export const cent2yuan = (
+  value: string | number,
+  fixedDigits: number = 2
+): string => {
   const numericalValue = parseNumber(value);
   if (!Number.isFinite(numericalValue)) {
     return '';
@@ -21,9 +24,9 @@ export const cent2yuan = (value: string | number, fixedDigits: number = 2): stri
  * 33.8 * 100; // 3379.9999999999995
  * yuan2cent(33.8); 3380
  */
-export const yuan2cent = (value: string|number) => {
+export const yuan2cent = (value: string | number) => {
   return times(value, 100);
-}
+};
 
 /**
  * 金额加法，加完后如果有小数保留两位小数
@@ -31,7 +34,7 @@ export const yuan2cent = (value: string|number) => {
  * 587.99 + 337.58; // 925.5699999999999
  * addYuan(587.99, 337.58); '925.57'
  */
- export const addYuan = (a: string | number, b: string | number): string => {
+export const addYuan = (a: string | number, b: string | number): string => {
   return cent2yuan(yuan2cent(a) + yuan2cent(b));
 };
 
@@ -53,7 +56,10 @@ export const subYuan = (a: string | number, b: string | number): string => {
  * calculateDiscountedPrice(1000, 8); // '800.00'
  * calculateDiscountedPrice(998, 8.8); // '888.22'
  */
-export const calculateDiscountedPrice = (price: string | number, discount: string | number): string => {
+export const calculateDiscountedPrice = (
+  price: string | number,
+  discount: string | number
+): string => {
   const numericalPrice = parseNumber(price);
   const numericalDiscount = parseNumber(discount);
   const discountedPrice = (numericalPrice * numericalDiscount * 1000) / 10000;
@@ -68,7 +74,10 @@ export const calculateDiscountedPrice = (price: string | number, discount: strin
  * calculateDiscount(1000, 800); // '8'
  * calculateDiscount(1000, 888); // '8.9'
  */
-export const calculateDiscount = (price: string | number, discountedPrice: string | number): string => {
+export const calculateDiscount = (
+  price: string | number,
+  discountedPrice: string | number
+): string => {
   const numericalPrice = parseNumber(price);
   const numericalDiscountedPrice = parseNumber(discountedPrice);
   const discount = (numericalDiscountedPrice * 1000) / (numericalPrice * 100);

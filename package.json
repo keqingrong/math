@@ -12,6 +12,7 @@
   "scripts": {
     "build": "rollup -c",
     "prepack": "yarn build",
+    "format": "prettier --write \"src/**/*.{js,ts,json}\" --loglevel warn",
     "test": "jest --config",
     "test-c": "jest --config --coverage"
   },
@@ -36,6 +37,7 @@
     "@types/jest": "^26.0.20",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
+    "prettier": "^2.4.1",
     "rollup": "^2.58.1",
     "rollup-plugin-dts": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",
