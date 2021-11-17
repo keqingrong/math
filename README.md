@@ -14,6 +14,7 @@ npm install @keqingrong/math
 
 - `mb2gb()`
 - `cent2yuan()`
+- `yuan2cent()`
 - `addYuan()`
 - `subYuan()`
 - `calculateDiscountedPrice()`

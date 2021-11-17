@@ -1,5 +1,6 @@
 import {
   cent2yuan,
+  yuan2cent,
   addYuan,
   subYuan,
   calculateDiscountedPrice,
@@ -9,6 +10,12 @@ import {
 test('cent2yuan', () => {
   expect(cent2yuan(100)).toBe('1');
   expect(cent2yuan(123)).toBe('1.23');
+});
+
+test('yuan2cent', () => {
+  expect(yuan2cent(1)).toBe(100);
+  expect(yuan2cent(1.23)).toBe(123);
+  expect(yuan2cent(33.8)).toBe(3380);
 });
 
 test('addYuan', () => {

@@ -1,3 +1,4 @@
+import { times } from 'number-precision';
 import { parseNumber, toFixedAdvanced, stripTrailingZeros } from './utils';
 
 /**
@@ -15,15 +16,23 @@ export const cent2yuan = (value: string | number, fixedDigits: number = 2): stri
 };
 
 /**
+ * 元转分
+ * @example
+ * 33.8 * 100; // 3379.9999999999995
+ * yuan2cent(33.8); 3380
+ */
+export const yuan2cent = (value: string|number) => {
+  return times(value, 100);
+}
+
+/**
  * 金额加法，加完后如果有小数保留两位小数
  * @example
  * 587.99 + 337.58; // 925.5699999999999
  * addYuan(587.99, 337.58); '925.57'
  */
  export const addYuan = (a: string | number, b: string | number): string => {
-  const numericalA = parseNumber(a);
-  const numericalB = parseNumber(b);
-  return cent2yuan(numericalA * 100 + numericalB * 100);
+  return cent2yuan(yuan2cent(a) + yuan2cent(b));
 };
 
 /**
@@ -33,9 +42,7 @@ export const cent2yuan = (value: string | number, fixedDigits: number = 2): stri
  * subYuan(587.99, 337.58); '250.41'
  */
 export const subYuan = (a: string | number, b: string | number): string => {
-  const numericalA = parseNumber(a);
-  const numericalB = parseNumber(b);
-  return cent2yuan(numericalA * 100 - numericalB * 100);
+  return cent2yuan(yuan2cent(a) - yuan2cent(b));
 };
 
 /**
