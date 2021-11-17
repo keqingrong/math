@@ -1,11 +1,11 @@
 {
   "name": "@keqingrong/math",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Utilities for some frequently used calculation",
-  "main": "dist/math.cjs.js",
-  "module": "dist/math.esm.js",
-  "browser": "dist/math.umd.js",
-  "types": "dist/math.d.ts",
+  "main": "./dist/math.cjs.js",
+  "module": "./dist/math.esm.js",
+  "browser": "./dist/math.umd.js",
+  "types": "./dist/math.d.ts",
   "files": [
     "dist"
   ],
@@ -32,15 +32,20 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
-    "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
-    "@rollup/plugin-typescript": "^8.3.0",
     "@types/jest": "^26.0.20",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
     "rollup": "^2.58.1",
     "rollup-plugin-dts": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.30.0",
     "tslib": "^2.3.1",
     "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "number-precision": "^1.5.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
